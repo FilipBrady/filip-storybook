@@ -27,7 +27,7 @@ const TabBar = ({
   const [isActiveBtn3, setIsActiveBtn3] = useState(false);
   const style = {
     display: 'flex',
-    flexDirection: 'row',
+    "flex-direction": 'row',
     backgroundColor: tabBarBgColor,
     padding: '0',
     margin: '0',
