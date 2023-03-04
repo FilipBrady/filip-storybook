@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 
 export type ButtonProps = {
-  label: string;
+  label?: string;
   backgroundColor?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   handleClick?: () => void;
-  rounding?:  'sm' | 'md' | 'lg' | 'xl'
+  rounding?:  'sm' | 'md' | 'lg' | 'xl',
+  disableBtn?: boolean
 };
 
-const Button = ({ label, backgroundColor, size, handleClick, rounding }: ButtonProps) => {
+const Button = ({ label, backgroundColor, size, handleClick, rounding, disableBtn }: ButtonProps) => {
   let scale = 1;
   if (size === 'sm') scale = 0.75;
   if (size === 'lg') scale = 1.5;
@@ -18,7 +19,7 @@ const Button = ({ label, backgroundColor, size, handleClick, rounding }: ButtonP
   if (rounding === 'lg') borderRadius = 15;
   if (rounding === 'xl') borderRadius = 25;
   const style = {
-    backgroundColor,
+    backgroundColor: `${disableBtn ? '#bebebe' : backgroundColor}`,
     padding: `${scale * 0.5}rem ${scale * 1}rem`,
     border: 'none',
     borderRadius: `${borderRadius}px`,
@@ -26,7 +27,7 @@ const Button = ({ label, backgroundColor, size, handleClick, rounding }: ButtonP
     fontSize: "1.5rem"
   };
   return (
-    <button onClick={handleClick} style={style}>
+    <button onClick={handleClick} style={style} disabled={disableBtn}>
       {label}
     </button>
   );

@@ -1,11 +1,11 @@
 type BasicInputProps = {
-  inputType: 'text' | 'email' | 'password';
-  inputPlaceholder: string;
-  inputPadding: 'sm' | 'md' | 'lg' | 'xl';
-  inputFontSize: number;
-  inputBorderRadius: 'sm' | 'md' | 'lg' | 'xl';
-  inputBorder: number;
-  inputBorderColor: string;
+  inputType?: 'text' | 'email' | 'password';
+  inputPlaceholder?: string;
+  inputPadding?: 'sm' | 'md' | 'lg' | 'xl';
+  inputFontSize?: number;
+  inputBorderRadius?: 'sm' | 'md' | 'lg' | 'xl';
+  inputBorder?: number;
+  inputBorderColor?: string;
 };
 const BasicInput = ({
   inputType,
