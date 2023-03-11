@@ -1,37 +1,36 @@
-import { FC } from 'react';
+import styles from './Input.module.scss';
+import classNames from 'classnames';
+import { useState } from 'react';
 
-interface InputProps {
+type InputProps = {
   type?: 'text' | 'number' | 'password';
   placeholder?: string;
   value?: string | number;
-  onChange(vaue: string | number): void;
+  onChange(vlue: string | number): void;
   title?: string;
-}
+  variant: 'primary' | 'filled' | 'disabled' | 'outlined';
+};
 
-export const Input: FC<InputProps> = ({
-  type = 'text',
-  placeholder = '',
-  value = '',
+export const Input = ({
+  type,
+  placeholder,
+  value,
   title,
   onChange,
-}) => {
+  variant,
+}: InputProps) => {
   return (
-    <label
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-      }} //TODO
-    >
-      {title && <span>{title}</span>}
+    <label className={classNames(styles.label, styles[variant])}>
+      {title && <span className={classNames(styles.span, styles[variant])}>{title}</span>}
       <input
         //TODO
-        style={{ width: 150 }}
+        disabled={variant === 'disabled'}
+        className={classNames(styles.input, styles[variant])}
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={e => onChange(e.target.value)}
-      />
+        />
     </label>
   );
 };
