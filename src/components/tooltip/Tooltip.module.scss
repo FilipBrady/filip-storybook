@@ -1,0 +1,63 @@
+.div {
+  display: flex;
+  gap: 4px;
+  position: relative;
+  top: 150px;
+  left: 150px;
+
+  // &.start {
+  //   flex-direction: row;
+  // }
+
+  // &.end {
+  //   flex-direction: row-reverse;
+  // }
+
+  // &.top {
+  //   flex-direction: column;
+  // }
+
+  // &.bottom {
+  //   flex-direction: column-reverse;
+  // }
+}
+
+.tooltip {
+  background: rgb(181, 181, 181);
+  position: absolute;
+  // bottom: 50px;
+  padding: 4px 6px;
+  border-radius: 7px;
+  color: black;
+  animation: apear .5s;
+
+  @keyframes apear {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &.start {
+    right: 120%;
+  }
+
+  &.end {
+    left: 120%;
+  }
+
+  &.top {
+    bottom: 120%;
+  }
+
+  &.bottom {
+    top: 120%;
+  }
+}
+
+.hide {
+display: none;
+}
