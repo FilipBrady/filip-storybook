@@ -8,5 +8,7 @@ export default {
 const Template: ComponentStory<typeof Switch> = args => <Switch {...args} />
 export const Default = Template.bind({})
 Default.args = {
-  title: "Hello switch"
+  variant: "checked",
+  title: "hello",
+  color: 'error'
 }

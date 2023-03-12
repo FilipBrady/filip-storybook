@@ -1,0 +1,105 @@
+:root {
+  --primary--bg--color: rgb(0, 119, 255);
+  --primary--bg--color--active: rgb(26, 133, 255);
+  --secondary--bg--color: rgb(220, 0, 236);
+  --secondary--bg--color-active: gb(233, 24, 248);
+  --succec--bg--color: rgb(1, 191, 1);
+  --succec--bg--color--active: rgb(41, 205, 41);
+  --error--bg--color: rgb(255, 28, 28);
+  --error--bg--color--active: rgb(241, 48, 48);
+}
+
+
+
+.snackbar {
+  background: black;
+  width: 150px;
+  height: fit-content;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  &.top-left {
+    top: 10px;
+    left: 10px;
+  }
+
+  &.top-center {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.top-right {
+    top: 10px;
+    left: 100%;
+    transform: translateX(calc(-100% - 10px));
+  }
+
+  &.bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  &.bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom-right {
+    bottom: 10px;
+    left: 100%;
+    transform: translateX(calc(-100% - 10px));
+  }
+
+  &.left-center {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  &.right-center {
+    top: 50%;
+    left: 100%;
+    transform: translate(calc(-100% - 10px), -50%);
+  }
+
+  &.primary {
+    color: white;
+    background-color: var(--primary--bg--color);
+
+  }
+
+  &.secondary {
+    color: white;
+    background-color: var(--secondary--bg--color);
+
+  }
+
+  &.succes {
+    color: white;
+    background-color: var(--succec--bg--color);
+
+  }
+
+  &.error {
+    color: white;
+    background-color: var(--error--bg--color);
+
+  }
+}
+
+.close {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
